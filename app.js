@@ -112,8 +112,7 @@ function sectionCards() {
             </div>
           </div>
         </div>
-      </div>
-        `  
+      </div>`  
     }
     ) 
     cardsdetails.innerHTML =newCards
@@ -133,8 +132,7 @@ function sectionCards() {
         </div>
       </div>
     </div>
-    </section>
-      `  
+    </section>`  
   }
   ) 
   detailsSections.innerHTML =newDetailsArray;
@@ -143,8 +141,7 @@ function sectionCards() {
     return `
     <video controls id=${item.id} poster=${item.poster}>
     <source src=${item.src}>
-  </video>
-    `  
+  </video>`  
 }
 ) 
 video.innerHTML =newVideoArray;
