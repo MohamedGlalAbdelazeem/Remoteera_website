@@ -20,7 +20,11 @@ const myData = {
     description:"تعرّف على تشكيلتنا الواسعة من الأجهزة التي تسهّل حياتكم اليومية بدءًا من التحكم في الإضاءة والتدفئة إلى أجهزة الأمان والترفيه",
     imageUrl:"./imgs/details2.JPEG"   
     },
+
   ],
+
+
+
   detailsSectionsArray:[
     {
       description:"  درجات الحرارة مش بتنزل والحر بقا لا يُحتمل، لكن فواتير الكهربا كمان لا تُحتمل ريموتيرا هتساعدك تتحكم في كل تكييفات البيت بسهولة ومن أي مكان، بموبيلك بس هتقدر تفتح وتقفل التكييف في أي أوضة، عشان تعييش إنتعاشة الصيف وانت مرتاح   مستني إيه ؟ ركب ريموتيرا واتحكم في فاتورة الكهربا وانت في مكانك",
@@ -92,16 +96,39 @@ const myData = {
 
 
 function sectionCards() {
+  // for (let i = 0; i < myData.myCards.length; i++) {
+  //     const item = myData.myCards[i];
+  //       cardsdetails.innerHTML += ` 
+  //         <div class="card ${item.class ? item.class : ""}">
+  //       <div class="row ">
+  //         <div>
+  //           <img src="${item.imageUrl}">
+  //         </div>
+  //         <div>
+  //           <div>
+  //             <h5 class="card-title">
+  //               ${item.title}
+  //             </h5>
+  //             <hr/>
+  //             <p class="card-text">
+  //             ${item.description}
+  //               </p>
+  //           </div>
+  //         </div>
+  //       </div>
+  //     </div>`     
+  // }
   //loop cards
-    const newCards = myData.myCards.map((item)=>{
-        return `
-        <div class="card ${item.class}">
+ 
+      myData.myCards.map((item)=>{
+       cardsdetails.innerHTML += 
+      `<div class="card ${item.class ? item.class : ""}">
         <div class="row ">
           <div>
             <img src="${item.imageUrl}">
           </div>
           <div>
-            <div class="card-body">
+            <div>
               <h5 class="card-title">
                 ${item.title}
               </h5>
@@ -112,13 +139,15 @@ function sectionCards() {
             </div>
           </div>
         </div>
-      </div>`  
-    }
-    ) 
-    cardsdetails.innerHTML =newCards
+      </div>` 
+
+     }
+     ) 
+
+
      // loop sections
-     const newDetailsArray = myData.detailsSectionsArray.map((item)=>{
-      return `
+   myData.detailsSectionsArray.map((item)=>{
+    detailsSections.innerHTML += `
       <section class="details1 ${item.className}">
       <div class="container">
       <div class="parent">
@@ -135,17 +164,18 @@ function sectionCards() {
     </section>`  
   }
   ) 
-  detailsSections.innerHTML =newDetailsArray;
+ 
+
   // loop videos
-  const newVideoArray = myData.videoArray.map((item)=>{
-    return `
+     myData.videoArray.map((item)=>{
+      video.innerHTML +=  `
     <video controls id=${item.id} poster=${item.poster}>
     <source src=${item.src}>
   </video>`  
 }
 ) 
-video.innerHTML =newVideoArray;
 }
+
 sectionCards();
 //end
 
